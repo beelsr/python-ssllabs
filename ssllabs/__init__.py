@@ -342,8 +342,8 @@ class SSLLabsAssessment(object):
                 _host_status = _status.get('status')
                 if _host_status == 'IN_PROGRESS':
                     if logging.getLogger().getEffectiveLevel() <= 20:
-                        sys.stdout.write('.')
-                        sys.stdout.flush()
+                        sys.stderr.write('.')
+                        sys.stderr.flush()
                     time.sleep(10)
                 elif _host_status == 'READY':
                     return _status if self.return_all in ('on', 'done') else self._get_all_results()
